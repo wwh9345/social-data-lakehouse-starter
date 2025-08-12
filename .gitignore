@@ -1,0 +1,27 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# Ignore logs
+*.log
+
+# Ignore prototype notebooks
+# *_TEST.ipynb
+
+# Ignore data folders and large file types (eg. .pkl files)
+data*/
+
+# ipynb checkpoint folders and archives
+.ipynb_checkpoints/
+archived/
+
+# Ignore vscode-related files
+.vscode/
+
+# Ignore env file
+.env
+
+# Ignore venv folder
+.venv/
+
+# ignore system files
+.DS_Store

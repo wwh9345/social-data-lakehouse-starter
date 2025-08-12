@@ -1,0 +1,14 @@
+provider: ${PROVIDER}
+bronze_bucket: ${BUCKET_BRONZE}
+silver_bucket: ${BUCKET_SILVER}
+layout:
+  # bronze: "bronze/year={YYYY}/month={MM}/{type}-{YYYY}-{MM}.zst"
+  bronze: "year={YYYY}/month={MM}/{type}-{YYYY}-{MM}.zst"
+  silver: "{version}/year={YYYY}/month={MM}/part-*.parquet"
+silver_active_version: "v1"
+versioning:
+  bronze: true
+  silver: false
+lifecycle:
+  expire_tmp_days: 7
+  silver_retention_months: 18

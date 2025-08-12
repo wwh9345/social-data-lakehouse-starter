@@ -1,0 +1,12 @@
+# basic data contract for Reddit Pushshift dumps (customise depending on your use-case!)
+id: string
+author: string
+subreddit: string
+created_utc: int          # seconds since epoch (UTC)
+body: string              # for comments (likely 'selftext' for submissions)
+link_id: string
+parent_id: string         # for all parent-objects
+score: int
+permalink: string
+title: string             # for submissions
+url: string               # for submissions
