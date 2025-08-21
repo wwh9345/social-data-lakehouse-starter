@@ -12,13 +12,21 @@ PY := python3
 setup:
 	python3 -m venv .venv
 	. .venv/bin/activate && pip install --upgrade pip
-	. .venv/bin/activate && pip install -r requirements.txt
+# 	. .venv/bin/activate && pip install -r requirements.txt
+	. .venv/bin/activate && pip install -r requirements_full.txt
 
 .PHONY: upload
 upload:
 	. .venv/bin/activate && $(PY) etl/ingest_upload.py \
 		--local-dir "$(RAW_DIR)" \
 		--bucket "$(BUCKET_BRONZE)"
+
+.PHONY: upload_prototype
+upload_prototype:
+	. .venv/bin/activate && $(PY) etl/PROTO_ingest_upload.py \
+		--local-dir "$(RAW_DIR)" \
+		--bucket "$(BUCKET_BRONZE)" \
+		--period-months "$(PERIOD_MONTHS)"
 
 .PHONY: sample
 sample:
