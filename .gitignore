@@ -9,6 +9,8 @@ __pycache__/
 
 # Ignore data folders and large file types (eg. .pkl files)
 data*/
+*.duckdb
+*.duckdb.wal
 
 # ipynb checkpoint folders and archives
 .ipynb_checkpoints/
