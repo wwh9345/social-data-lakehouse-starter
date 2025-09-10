@@ -6,11 +6,11 @@ ifneq (,$(wildcard ./.env))
   export
 endif
 
-PY := python3
+PY := python3.12
 
 .PHONY: setup
 setup:
-	python3 -m venv .venv
+	python3.12 -m venv .venv
 	. .venv/bin/activate && pip install --upgrade pip
 # 	. .venv/bin/activate && pip install -r requirements.txt
 	. .venv/bin/activate && pip install -r requirements_full.txt
